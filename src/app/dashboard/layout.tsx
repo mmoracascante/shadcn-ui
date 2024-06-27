@@ -22,6 +22,7 @@ const links = [
     { name: "skeleton", href: "skeleton" },
     { name: "toast", href: "toast" },
     { name: "slider", href: "slider" },
+    { name: "datatable", href: "datatable" },
     { name: "tabs", href: "tabs" },
     { name: "sooner", href: "sooner" },
     { name: "input otp", href: "input-otp" },
