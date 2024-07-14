@@ -4,6 +4,7 @@ import { Toaster as SoonerToast } from "@/components/ui/sonner"
 import { Toaster } from "@/components/ui/toaster"
 import { cn } from "@/lib/utils"
 import "./globals.css";
+import { ThemeProvider } from "@/components/ui/theme-provider"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -21,12 +22,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html suppressHydrationWarning lang="en">
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable
-        )}>{children}
+        )}>
+
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
         <SoonerToast />
         <Toaster />
       </body>
